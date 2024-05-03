@@ -121,6 +121,7 @@ def ExportStaticFiles(pb):
                 .replace("{gzip_hash}", pb.gzip_hash)
                 .replace("{url_mode}", url_mode)
                 .replace("{try_preload}", str(int(pb.gc("toggles/features/search/try_preload"))))
+                .replace("{wrap_imgs_with_links}", str(int(pb.gc("toggles/features/styling/wrap_imgs_with_links"))))
             )
             contents = (
                 contents.replace("__accent_color__", pb.gc("toggles/features/styling/accent_color", cached=True))

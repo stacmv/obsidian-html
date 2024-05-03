@@ -14,6 +14,7 @@ var RELATIVE_PATHS = {relative_paths};
 var documentation_mode = {documentation_mode};
 var tab_mode = !no_tab_mode;
 var gzip_hash = '{gzip_hash}'                       // used to check whether the localStorage data is stale
+var wrap_imgs_with_links_enabled = {wrap_imgs_with_links}
 
 // global cache
 var fn_cache_ls_available = null;
@@ -340,7 +341,9 @@ function SetContainer(container) {
     SetHeaders(container);
 
     // wrap images in links so we can easily open the actual size (unless it is already wrapped by a link)
-    wrap_imgs_with_links(container);
+    if (wrap_imgs_with_links_enabled) {
+        wrap_imgs_with_links(container);
+    }
 
     // Load mermaid code
     // if (mermaid_enabled){

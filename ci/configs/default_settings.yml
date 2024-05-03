@@ -27,6 +27,8 @@ html_output_folder_path_str: 'tmp/html'
 
 toggles:
   features:
+    styling:
+      wrap_imgs_with_links: True
     rss:
       enabled: False
       host_root: 'https://localhost:8088'
